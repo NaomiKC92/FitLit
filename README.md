@@ -19,7 +19,7 @@ Fitlit is a paired project for Module 2 at Turing School of Software & Design. F
 Fitlit is an activity tracker that tracks prepopulated data over the course of three months. The dashboard presents the user's hydration, sleep and activity information as well as weekly trends and comparisons to their peers. 
 
 ## Live Page
-[LivePage]
+[LivePage](https://naomikc92.github.io/FitLit/)
 
 ## Screenshot
 ![gif](images/fit-lit-live.gif)
