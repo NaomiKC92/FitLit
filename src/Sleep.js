@@ -80,11 +80,6 @@ class Sleep {
     return +((totalQual / this.sleepData.length).toFixed(2))
   }
 
-  // findAvgOverThree() {
-  //  this.sleepData.date === 
-    
-  // }
-
   findUserWhoSleptMost(date) {
    let matchingDate = this.sleepData.filter( user => user.date === date);
    let mostHours = Math.max(...matchingDate.map(day => day.hoursSlept), 0);
@@ -96,7 +91,6 @@ class Sleep {
     console.log(num)
     return this.findUser(id).filter(day => day.sleepQuality === num)
   }
-
 }
 
 if (typeof module !== "undefined") {

@@ -7,46 +7,44 @@
 body {
   display: flex;
   justify-content: center;
-
 }
 
 header {
   background: linear-gradient(45deg, #CB79DD, #2eafff);
   border-bottom: solid 2px #000;
-  padding: 15px;
   display: flex;
-  width: 100%;
-  height: 23%;
   flex-direction: column;
+  height: 23%;
+  padding: 15px;
+  width: 100%;
 }
 
 h1 {
-  text-align: center;
   font-size: 3.3em;
   font-weight: 800;
+  text-align: center;
   width: 100%;
-  
 }
 
 .name--display{
-  text-align: left;
-  padding: 15px;
-  margin-left: 115px;
   margin-bottom: -15px;
+  margin-left: 115px;
+  padding: 15px;
+  text-align: left;
 }
 
 .contact-container {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .contact--info {
-  text-align: left;
+  color: #000;
+  font-size: 1em;
+  margin-left: 20px;
   margin-top: 5px;
   padding-left: 10px;
-  font-size: 1em;
-  color: #000;
-  margin-left: 20px;
+  text-align: left;
 }
 
 .info--wrapper {
@@ -56,9 +54,9 @@ h1 {
 }
 
 .contact--label {
-  padding-right: 20px;
-  font-weight: 700;
   color:#000;
+  font-weight: 700;
+  padding-right: 20px;
 }
 
 .user--info {
@@ -66,79 +64,79 @@ h1 {
 }
 
 .main--container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background: url('../images/possible-background.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 100%;
   background-size: cover;
+  background: url('../images/possible-background.jpg');
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   overflow: auto;
+  width: 100%;
 }
 
 .under-header--main {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-content: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .card--container {
-  width: 90%;
+  align-items: center;
+  align-self: center;
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
-  align-items: center;
-  align-self: center;
-  margin-top: 3%;
   justify-content: space-evenly;
+  margin-top: 3%;
   overflow: auto;
+  width: 90%;
 }
 
 .card {
   background-color: #000;
-  width: 45%;
-  height: 30%;
   border-radius: 20px;
+  height: 30%;
   margin-bottom: 25px;
+  width: 45%;
 }
 
 .hydration--data-chart {
-  height: 16%;
-  width: 40%;
   background-color: #000;
   background-size: auto;
   border: solid 4px #79c6f5;
+  height: 16%;
   padding: 5px;
+  width: 40%;
 }
 
 .daily-widget-container {
+  align-self: center;
   display: flex;
   flex-direction: row;
   height: 10%;
-  width: 80%;
   justify-content: space-between;
-  align-self: center;
   margin-top: 1%;
+  width: 80%;
 }
 
 .widget-card-container {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .hydration--widget {
-  width: 30%;
-  height: 100%;
-  border: solid 4px #79c6f5;
-  border-radius: 20px;
   background-color: #000;
-  text-align: center;
-  font-size: 1.1em;
+  border-radius: 20px;
+  border: solid 4px #79c6f5;
   color: #79c6f5;
+  font-size: 1.1em;
+  height: 100%;
   padding-top: 1%;
+  text-align: center;
+  width: 30%;
 }
 
 .hydration--variable {
@@ -146,14 +144,14 @@ h1 {
 }
 
 .widget-hydration-header {
-  font-size: 1.2em;
   color: #79c6f5;
+  font-size: 1.2em;
 }
 
 .water-bottle-icon {
   height: 75px;
-  width: 75px;
   margin: 15px auto;
+  width: 75px;
 }
 
 .widget--variable {
@@ -162,53 +160,54 @@ h1 {
 }
 
 .sleep--widget {
-  width: 30%;
-  height: 100%;
-  border: solid 4px #8a79f5;
-  border-radius: 20px;
   background-color: #000;
-  text-align: center;
-  font-size: 100%;
+  border-radius: 20px;
+  border: solid 4px #8a79f5;
   color: #8a79f5;
+  font-size: 100%;
+  height: 100%;
   padding-top: 1%;
+  text-align: center;
+  width: 30%;
 }
+
 .bed-icon {
-  width: 95px;
   height: 95px;
+  width: 95px;
 }
 
 .sleep--data-chart {
-  height: 16%;
-  width: 40%;
-  padding: 5px;
   background-color: #000;
   background-size: auto;
   border: solid 4px #8A79f5;
+  height: 16%;
+  padding: 5px;
+  width: 40%;
 }
 
 .activity--widget {
-  width: 30%;
-  height: 100%;
-  border: solid 4px #49C468;
-  border-radius: 20px;
   background-color: #000;
-  text-align: center;
-  font-size: 100%;
+  border-radius: 20px;
+  border: solid 4px #49C468;
   color: #49C468;
+  font-size: 100%;
+  height: 100%;
   padding-top: 1%;
+  text-align: center;
+  width: 30%;
 }
 
 .step-icon {
-  width: 70px;
   height: 70px;
   padding: 2%;
+  width: 70px;
 }
 
 .activity-details {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   font-size: 100%;
+  justify-content: space-around;
  }
 
 .img-user-icon {
@@ -219,33 +218,32 @@ h1 {
 }
 
 .user-icon {
-  width: 120%;
-  height: 90%;
   border-radius: 100px;
+  height: 90%;
+  width: 120%;
 }
 
 .average-step-comparison {
+  background-color: #000;
+  border: solid 4px #49C468;
+  color: #49C468;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 80%;
-  height: 10%;
-  padding: 1% 2% 1% 2%;
-  margin: 2%;
-  border: solid 4px #49C468;
-  background-color: #000;
-  text-align: center;
   font-size: 100%;
-  color: #49C468;
+  height: 10%;
+  justify-content: space-around;
+  margin: 2%;
+  padding: 1% 2% 1% 2%;
+  text-align: center;
+  width: 80%;
 }
-
 
 .user-avg-steps, 
 .world-avg-steps {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 50%;
 }
 
 .user-avg-steps > p,
@@ -258,11 +256,11 @@ h1 {
 }
 
 .line-divider {
-  border: solid 1px #49C468;
-  width: 0%;
-  height: 90%;
   align-self: baseline;
+  border: solid 1px #49C468;
+  height: 90%;
   margin-top: 1%;
+  width: 0%;
 }
 
 #compare-daily-activity {
@@ -280,40 +278,40 @@ h1 {
 .compare-daily-minutes,
 .compare-daily-stairs,
 .compare-daily-steps {
+  border: 4px solid #49C468;
   height: 12%;
   width: 30%;
-  border: 4px solid #49C468;
 }
 
 .weekly-water-intake {
-  padding: 5px;
   border: 4px solid #79c6f5;
   height: 16%;
+  padding: 5px;
   width: 40%;
 }
 
 .weekly-sleep-info {
-  padding: 5px;
   border: 4px solid #8A79F5;
   height: 16%;
+  padding: 5px;
   width: 40%;
 }
 
 .hours-slept-container,
 .sleep-qual-container {
-  width: 20%;
-  height: 15%;
   background-color: #000;
   border-radius: 20px;
   border: 4px solid #8A79F5;
+  height: 15%;
   text-align: center;
+  width: 20%;
 }
 
 .hours-slept {
-  margin-top: 20%;
   color: #fff;
   font-size: 2.5em;
   font-weight: 700;
+  margin-top: 20%;
 }
 
 .sleep-qual {
@@ -325,18 +323,17 @@ h1 {
 
 .avg-hours-slept,
 .avg-sleep-qual > h3 {
+  color: #8a79f5;
   margin-top: 10%;
   padding: 2%;
-  color: #8a79f5;
 }
-
 
 .weekly-minutes-tracker,
 .weekly-stairs-tracker,
 .weekly-step-tracker {
-  padding: 5px;
   border: 4px solid #49C468;
   height: 16%;
+  padding: 5px;
   width: 40%;
 }
 
