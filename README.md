@@ -21,7 +21,7 @@ Fitlit is an activity tracker that tracks prepopulated data over the course of t
 ## Live Page
 [LivePage](https://naomikc92.github.io/FitLit/)
 
-## Screenshot
+## Screenshots
 ![gif](images/fit-lit-live.gif)
 ![Screenshot](images/fitlit-1.jpg)
 ![Screenshot](images/fitlit-2.jpg)
