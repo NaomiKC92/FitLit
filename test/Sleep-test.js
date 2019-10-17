@@ -102,16 +102,16 @@ describe.only('Sleep', () => {
   it('should return the night(s) with the user\'s best sleep quality', () => {
     expect(sleep.findBestSleepQualityNight(5)).to.eql([
       {
-      "date": "2019/06/18",
-       "hoursSlept": 5.2,
-       "sleepQuality": 4.1,
-       "userID": 5
+        "date": "2019/06/18",
+        "hoursSlept": 5.2,
+        "sleepQuality": 4.1,
+        "userID": 5
       },
-     {
-      "date": "2019/06/21",
-       "hoursSlept": 9.6,
-       "sleepQuality": 4.1,
-       "userID": 5
+      {
+        "date": "2019/06/21",
+        "hoursSlept": 9.6,
+        "sleepQuality": 4.1,
+        "userID": 5
       }
     ]);
   });

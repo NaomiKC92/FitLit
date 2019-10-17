@@ -107,13 +107,13 @@ describe('Activity', () => {
 
   it('should return one user\'s information', () => {
     expect(activity.findSingleUserData(5)).to.eql({
-    id: 5,
-    name: 'Erick Schaden',
-    address: '514 Mayert Walk, Jordaneside SC 55023-6523',
-    email: 'Vanessa_Gerhold@gmail.com',
-    strideLength: 3.1,
-    dailyStepGoal: 8000,
-    friends: [ 13, 44, 49, 33, 10 ]
+      id: 5,
+      name: 'Erick Schaden',
+      address: '514 Mayert Walk, Jordaneside SC 55023-6523',
+      email: 'Vanessa_Gerhold@gmail.com',
+      strideLength: 3.1,
+      dailyStepGoal: 8000,
+      friends: [13, 44, 49, 33, 10]
     })
   });
 

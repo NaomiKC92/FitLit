@@ -7,11 +7,11 @@ class Activity {
   }
 
   findOneUser(id) {
-    return this.activityData.filter( user => user.userID === id);
+    return this.activityData.filter(user => user.userID === id);
   }
 
   findSingleUserData(id) {
-    let user = this.userData.filter( user => user.id === id);
+    let user = this.userData.filter(user => user.id === id);
     return this.singleUser = user[0];
   }
 
@@ -36,9 +36,9 @@ class Activity {
     let singleUser = this.findOneUser(id);
     let latestDay;
     singleUser.forEach((night, index) => {
-      night.date === date ? (latestDay = index) : null 
+      night.date === date ? (latestDay = index) : null
     });
-    let weekly = singleUser.slice(latestDay - 6, latestDay +1)
+    let weekly = singleUser.slice(latestDay - 6, latestDay + 1)
     return weekly
   }
 
@@ -48,7 +48,7 @@ class Activity {
       totalMin += dailyMin.minutesActive
       return totalMin
     }, 0)
-    return +((activeMins/week.length).toFixed(0))
+    return +((activeMins / week.length).toFixed(0))
   }
 
   findStepGoal(id) {
@@ -76,7 +76,7 @@ class Activity {
     let allStairs = day.reduce((flights, userClimbed) => {
       flights += userClimbed.flightsOfStairs
       return flights
-    }, 0) 
+    }, 0)
     return allStairs / day.length
   }
 
@@ -85,7 +85,7 @@ class Activity {
     let totalSteps = day.reduce((steps, usersSteps) => {
       steps += usersSteps.numSteps
       return steps
-    }, 0) 
+    }, 0)
     return +((totalSteps / day.length).toFixed())
   }
 
@@ -94,7 +94,7 @@ class Activity {
     let totalMins = day.reduce((allMins, activity) => {
       allMins += activity.minutesActive
       return allMins
-    }, 0) 
+    }, 0)
     return +((totalMins / day.length).toFixed())
   }
 
@@ -104,8 +104,6 @@ class Activity {
     let num = Math.max(...this.findOneUser(id).map(day => day.minutesActive))
     return this.findOneUser(id).filter(day => day.minutesActive === num)
   }
-
-
 }
 
 if (typeof module !== "undefined") {
