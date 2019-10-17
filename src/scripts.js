@@ -12,10 +12,46 @@ const stepComparison = document.querySelector('.average-step-comparison')
 const todaysDate = grabDate();
 const sleepQualContainer = document.querySelector('.sleep-qual-container')
 const hoursSleptContainer = document.querySelector('.hours-slept-container')
-// const stairsComparison = document.querySelector('.compare-daily-stairs');
 
+function grabDate() {
+  let index = hydrationData.length - 1;
+  return hydrationData[index].date;
+}
 
+function grabDailyMiles(id, date) {
+  let user = activity.findSingleUserData(id);
+  let day = activity.findSingleDayInfo(id, date);
+  let stepsPerMi = 5280 / user.strideLength;
+  return +((day.numSteps / stepsPerMi).toFixed(2))
+}
 
+function grabActiveMinutes(id, date) {
+  activity.findSingleDayInfo(id, date);
+  return activity.singleDay.minutesActive
+}
+
+function findOverallStepGoals() {
+  let usersStepAverage = userData.reduce((acc, user) => {
+    acc += user.dailyStepGoal
+    return acc;
+  }, 0)
+  return +((usersStepAverage / userData.length - 1).toFixed());
+}
+
+function getUsersDailyMetric(id, date, metric) {
+  let user = activityData.find(user => user.userID === id && user.date === date)
+  return user[metric]
+}
+
+function getAvgGroupMetrics(date, metric) {
+  let allData = activityData.reduce((acc, user) => {
+    if (user.userID !== randomUser.id && user.date === date) {
+      acc += user[metric]
+    }
+    return acc
+  }, 0)
+  return +((allData / userData.length - 1).toFixed())
+}
 
 header.insertAdjacentHTML('beforeend', `<h2 class='name--display'>Welcome, ${randomUser.name}</h2>
   <div class='contact-container'>
@@ -42,7 +78,6 @@ header.insertAdjacentHTML('beforeend', `<h2 class='name--display'>Welcome, ${ran
     </div> 
   </div>
 `)
-
 
 widgets.insertAdjacentHTML('afterbegin', `<div class='hydration--widget'>
         <div class='widget-card-container'>
@@ -82,7 +117,6 @@ stepComparison.insertAdjacentHTML('afterbegin', `<div class='user-avg-steps'>
         <p>steps</p>
         </div>`)
 
-
 sleepQualContainer.insertAdjacentHTML('afterbegin', ` <div class='avg-sleep-qual'>
 <h3>Average Sleep Quality</h3>
   <p class='sleep-qual'>${sleep.findAvgSleepQuality(randomUser.id)}</p>
@@ -93,36 +127,8 @@ hoursSleptContainer.insertAdjacentHTML('afterbegin', `<div class='avg-hours-slep
   <p class='hours-slept'>${sleep.findAvgHoursSlept(randomUser.id)}</p>
 </div>`)
 
-
-function grabDate() {
-  let index = hydrationData.length - 1;
-  return hydrationData[index].date;
-}
-
-function grabDailyMiles(id, date) {
-  let user = activity.findSingleUserData(id);
-  let day = activity.findSingleDayInfo(id, date);
-  let stepsPerMi = 5280 / user.strideLength;
-  return +((day.numSteps / stepsPerMi).toFixed(2))
-}
-
-function grabActiveMinutes(id, date) {
-  activity.findSingleDayInfo(id, date);
-  return activity.singleDay.minutesActive
-}
-
-function findOverallStepGoals() {
-  let usersStepAverage = userData.reduce((acc, user) => {
-    acc += user.dailyStepGoal
-    return acc;
-  }, 0)
-  return +((usersStepAverage / userData.length - 1).toFixed());
-}
-
-findOverallStepGoals();
-
-var ctx = document.getElementById('weekly--water').getContext('2d');
-var chart = new Chart(ctx, {
+const weeklyWater = document.getElementById('weekly--water').getContext('2d');
+let chart = new Chart(weeklyWater, {
   type: 'line',
   data: {
     labels: hydration.findAWeek(randomUser.id).map(day => day.date),
@@ -156,8 +162,8 @@ var chart = new Chart(ctx, {
   }
 });
 
-var sleepInfo = document.getElementById('weekly--sleep').getContext('2d');
-var sleepChart = new Chart(sleepInfo, {
+const sleepInfo = document.getElementById('weekly--sleep').getContext('2d');
+let sleepChart = new Chart(sleepInfo, {
   type: 'line',
   data: {
     labels: sleep.findAWeek(randomUser.id).map(day => day.date),
@@ -190,26 +196,6 @@ var sleepChart = new Chart(sleepInfo, {
     }
   }
 });
-
-
-function getUsersDailyMetric(id, date, metric) {
-  let user = activityData.find(user => user.userID === id && user.date === date)
-  return user[metric]
-}
-
-// getUsersDailyMetric(randomUser.id, todaysDate, 'numSteps')
-
-function getAvgGroupMetrics(date, metric) {
-  let allData = activityData.reduce((acc, user) => {
-    if (user.userID !== randomUser.id && user.date === date) {
-      acc += user[metric]
-    }
-    return acc
-  }, 0)
-  return +((allData / userData.length - 1).toFixed())
-}
-
-getAvgGroupMetrics(todaysDate, 'flightsOfStairs')
 
 const compareDailySteps = document.getElementById('compare-daily-steps').getContext('2d');
 let compareSteps = new Chart(compareDailySteps, {
