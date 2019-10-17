@@ -22,6 +22,6 @@ Fitlit is an activity tracker that tracks prepopulated data over the course of t
 [LivePage]
 
 ## Screenshot
-![Screenshot](images/fitlit-1.jpg)
-![Screenshot](images/fitlit-2.jpg)
-![Screenshot](images/fitlit-3.jpg)
+![Screenshot](./images/fitlit-1.jpg)
+![Screenshot](./images/fitlit-2.jpg)
+![Screenshot](./images/fitlit-3.jpg)
