@@ -1,5 +1,5 @@
 
-class  UserRepo {
+class UserRepo {
   constructor(userData) {
     this.users = userData;
   }
@@ -7,7 +7,7 @@ class  UserRepo {
   getSingleUserData(id) {
     return this.users.find(user => user.id === id);
   }
-  
+
   findAverageStepGoal() {
     const totalSteps = this.users.reduce((steps, user) => {
       steps += user.dailyStepGoal

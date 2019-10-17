@@ -77,42 +77,42 @@ describe('Hydration', () => {
   });
 
   it('should return 7 days', () => {
-    const week = 
-    [{
-      userID: 5,
-      date: '2019/06/18',
-      numOunces: 39
-    }, {
-      userID: 5,
-      date: '2019/06/19',
-      numOunces: 69
-    }, {
-      userID: 5,
-      date: '2019/06/20',
-      numOunces: 89
-    }, {
-      userID: 5,
-      date: '2019/06/21',
-      numOunces: 73
-    }, {
-      userID: 5,
-      date: '2019/06/22',
-      numOunces: 97
-    }, {
-      userID: 5,
-      date: '2019/06/23',
-      numOunces: 73
-    }, {
-      userID: 5,
-      date: '2019/06/24',
-      numOunces: 30
-    }]
+    const week =
+      [{
+        userID: 5,
+        date: '2019/06/18',
+        numOunces: 39
+      }, {
+        userID: 5,
+        date: '2019/06/19',
+        numOunces: 69
+      }, {
+        userID: 5,
+        date: '2019/06/20',
+        numOunces: 89
+      }, {
+        userID: 5,
+        date: '2019/06/21',
+        numOunces: 73
+      }, {
+        userID: 5,
+        date: '2019/06/22',
+        numOunces: 97
+      }, {
+        userID: 5,
+        date: '2019/06/23',
+        numOunces: 73
+      }, {
+        userID: 5,
+        date: '2019/06/24',
+        numOunces: 30
+      }]
     expect(hydration.findAWeek(5)).to.eql(week)
   });
 
   it('should return number of ounces for each day', () => {
-    const weeklyOz = [ 39, 69, 89, 73, 97, 73, 30]
+    const weeklyOz = [39, 69, 89, 73, 97, 73, 30]
     expect(hydration.getWeeklyOunces(5)).to.eql(weeklyOz);
   });
-    
+
 })

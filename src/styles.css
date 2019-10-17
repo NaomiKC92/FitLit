@@ -64,10 +64,10 @@ h1 {
 }
 
 .main--container {
+  background: url('../images/possible-background.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background: url('../images/possible-background.jpg');
   display: flex;
   flex-direction: column;
   min-height: 100%;
